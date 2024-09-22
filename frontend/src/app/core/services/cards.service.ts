@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { environment } from '@env/environment.development';
+import { CardInterface } from '@interfaces/cards.interface';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -9,9 +10,13 @@ import { Observable } from 'rxjs';
 export class CardsService {
   private http = inject(HttpClient)
 
-  public getCitiess(): Observable<CardInterface[]> {
-    return this.http.get<CardInterface[]>(
+  public getCards(): Observable<CardInterface> {
+    
+    /*console.log(this.http.get<CardInterface[]>(
       environment.apiURL + '/character'
-    );
+    ))*/
+    return this.http.get<CardInterface>(
+      environment.apiURL + '/character'
+    )
   }
 }

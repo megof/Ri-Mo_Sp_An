@@ -1,4 +1,4 @@
-interface InventoryInterface {
+export interface InventoryInterface {
     id_inventory: number;
     card: string;
     price: number;

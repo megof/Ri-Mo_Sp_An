@@ -4,9 +4,7 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'seach',
   standalone: true
 })
-export class SeachPipe implements PipeTransform {
-
-
+export class SearchPipe implements PipeTransform {
   transform(items: any[], searchText: string, property: string, id: string, fil: string): any[] {
     items = items.sort((a, b) => a.name.localeCompare(b.name))
     /*if(fil == 'departmentId' && id!='undefined'){
