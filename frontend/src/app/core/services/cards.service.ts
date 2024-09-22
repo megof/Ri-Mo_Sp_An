@@ -6,12 +6,12 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class InventoriesService {
-  /*private http = inject(HttpClient)
+export class CardsService {
+  private http = inject(HttpClient)
 
-  public getCitiess(): Observable<InventoryInterface[]> {
-    return this.http.get<InventoryInterface[]>(
-      environment.apiURL_users + '/inventory'
+  public getCitiess(): Observable<CardInterface[]> {
+    return this.http.get<CardInterface[]>(
+      environment.apiURL + '/character'
     );
-  }*/
+  }
 }
