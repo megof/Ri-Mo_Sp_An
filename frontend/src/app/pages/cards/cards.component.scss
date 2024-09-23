@@ -1,0 +1,21 @@
+
+.card{
+    block-size: 25rem; 
+    margin-inline-start: 0.3rem;
+    display: block;
+    inline-size: 100%;
+}
+.card-text{
+    block-size: 10rem;
+    overflow-y: auto; 
+}
+.card-element{
+    margin-block-start: 1rem;
+}
+.card-grid{
+    margin-block-start: 0.1rem;
+    color: white;
+}
+img{
+    border-radius: 50%;
+}

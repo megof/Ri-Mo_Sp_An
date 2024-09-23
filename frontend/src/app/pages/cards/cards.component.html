@@ -1,0 +1,41 @@
+<p>cards works!</p>
+
+@if (cards$ | async; as cards){
+<mat-form-field apperance="outline" class="" input>
+    <mat-label>Search</mat-label>
+    <input type="text" matInput [(ngModel)]="search" />
+</mat-form-field>
+@if(search()!=''){
+<h1>
+    Personajes con: "{{search()}}"
+</h1>
+}
+<mat-grid-list cols="3" rowHeight="1:1">
+    @for(card of cards.results | seach : search() : 'name': id()+'' : ''; track $index){
+    @let gender_status = equal(card.gender, card.status);
+    <mat-grid-tile class="card-grid">
+        <mat-card class="card">
+            <mat-card-header class="card-element">
+                <mat-card-title-group>
+                    <mat-card-title class="material-symbols-outlined">{{card.name}}</mat-card-title>
+                    <mat-card-subtitle>
+                        <mat-icon aria-hidden="false" aria-label="Example home icon"
+                            [fontIcon]="gender_status[0].icon" [ngStyle]="{'color': gender_status[0].color}"></mat-icon>
+                        {{card.gender}}
+                    </mat-card-subtitle>
+                    <mat-card-subtitle>
+                        <mat-icon aria-hidden="false" aria-label="Example home icon"
+                            [fontIcon]="gender_status[1].icon" [ngStyle]="{'color': gender_status[1].color}"></mat-icon>
+                        {{card.status}}
+                    </mat-card-subtitle>
+                    <img mat-card-md-image src={{card.image}} alt={{card.name}}>
+                </mat-card-title-group>
+            </mat-card-header>
+            <mat-card-content class="card-text card-element">
+                {{card | json}}
+            </mat-card-content>
+        </mat-card>
+    </mat-grid-tile>
+    }
+</mat-grid-list>
+}
