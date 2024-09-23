@@ -11,10 +11,6 @@ export class CardsService {
   private http = inject(HttpClient)
 
   public getCards(): Observable<CardInterface> {
-    
-    /*console.log(this.http.get<CardInterface[]>(
-      environment.apiURL + '/character'
-    ))*/
     return this.http.get<CardInterface>(
       environment.apiURL + '/character'
     )

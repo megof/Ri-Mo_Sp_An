@@ -11,7 +11,7 @@
 </h1>
 }
 <mat-grid-list cols="3" rowHeight="1:1">
-    @for(card of cards.results | seach : search() : 'name': id()+'' : ''; track $index){
+    @for(card of cards.results | search : search() : 'name': id()+'' : ''; track $index){
     @let gender_status = equal(card.gender, card.status);
     <mat-grid-tile class="card-grid">
         <mat-card class="card">

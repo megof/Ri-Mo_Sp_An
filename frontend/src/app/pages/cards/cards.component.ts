@@ -31,9 +31,6 @@ export class CardsComponent {
   public id = input<string>();
   private CardsService = inject(CardsService);
   public cards$ = this.CardsService.getCards();
-  public uu(arr: string) {
-    console.log('--' + arr);
-  }
   public search = signal('');
   public equal(Gender: string, Status: string) {
     const request = [
@@ -71,20 +68,12 @@ export class CardsComponent {
       ]
     ]
     let response: any[] = [];
-
-    console.log("///////////////////////////////////////////////////7")
-    console.log('-' + (JSON.stringify(response[0])) + '-' + (JSON.stringify(response[1])) + '-')
-    console.log('--' + Gender + '--' + Status)
-    console.log("-------------------------------------------")
     response.push(!(request[0].find((item) => item.option === Gender)) ?
       ({ option: '', icon: '', color: '' }) :
       (request[0].find((item) => item.option === Gender)));
     response.push(!(request[1].find((item) => item.option === Status)) ?
       ({ option: '', icon: '', color: '' }) :
       (request[1].find((item) => item.option === Status)));
-
-    console.log('-' + (JSON.stringify(response[0])) + '-' + (JSON.stringify(response[1])) + '-')
-    console.log("-------------------------------------------")
     return response;
   }
 }

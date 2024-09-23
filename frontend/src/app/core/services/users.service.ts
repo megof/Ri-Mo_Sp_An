@@ -7,12 +7,12 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class CityService {
-  /*private http = inject(HttpClient)
+export class UsersService {
+  private http = inject(HttpClient)
 
-  public getCitiess(): Observable<UserInterface[]> {
+  public getUsers(): Observable<UserInterface[]> {
     return this.http.get<UserInterface[]>(
       environment.apiURL_users + '/users'
     );
-  }*/
+  }
 }
